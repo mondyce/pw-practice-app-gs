@@ -9,7 +9,6 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    //page objects chrome script.                     npm script
     "page0bjects-chrome": "npx playwright test usePageObjects.spec.ts --project=chromium",
     "page0bjects-firefox": "npx playwright test usePageObjects.spec.ts --project=firefox",
     "page0bjects-all": "npm run page0bjects-chrome && npm run page0bjects-firefox"
