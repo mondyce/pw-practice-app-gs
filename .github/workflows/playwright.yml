@@ -9,8 +9,8 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
+    - uses: actions/checkout@v5
+    - uses: actions/setup-node@v5
       with:
         node-version: lts/*
         cache: 'npm'
@@ -19,7 +19,7 @@ jobs:
     - name: Build Angular app
       run: npx ng build
     - name: Cache Playwright browsers
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       id: playwright-cache
       with:
         path: ~/.cache/ms-playwright
@@ -32,7 +32,7 @@ jobs:
       run: npx playwright install-deps
     - name: Run Playwright tests
       run: npm run page0bjects-chrome
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       if: ${{ !cancelled() }}
       with:
         name: playwright-report
